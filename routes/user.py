@@ -1,6 +1,5 @@
 
-from routes.helpers import haversine
-from typing import Optional
+
 from fastapi import APIRouter, Depends, HTTPException
 from fastapi.responses import JSONResponse
 from database import db_dependency
