@@ -1,0 +1,58 @@
+Request
+
+curl -X 'POST' \
+  'http://127.0.0.1:8000/placeOrder' \
+  -H 'accept: application/json' \
+  -H 'Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyTmFtZSI6Imp5b3RoaUBnbWFpbC5jb20iLCJ1c2VySWQiOjQsInVzZXJUeXBlIjoiY3VzdG9tZXIiLCJleHAiOjE3MzAzODEzMjB9.9q-yPbCjNjWJW-gM0wYdgdH1vz5Ei4tNXkBLTC2SWKw' \
+  -H 'Content-Type: application/json' \
+  -d '{
+  "order": [
+    {
+      "productId": "9",
+      "quantity": "2"
+    }
+  ],
+  "merchantId": "1",
+  "address": "dddd",
+  "paymentMethod": "0",
+  "tipAmount": 0,
+  "deliveryMode": 0,
+  "merchantInstruction": "dd",
+  "deliveryInstruction": "dd",
+  "couponCode": "",
+  "longitude": "76.27415043531674",
+  "latitude": "9.989599512751933"
+}'
+
+
+
+Response 200
+
+{
+  "detail": "order placed successfully",
+  "charges": {
+    "totalPrice": 735.1,
+    "valueReduced": 0,
+    "taxes": [
+      {
+        "productName": "beef curry",
+        "tax": [
+          {
+            "taxAmount": 15,
+            "taxName": "gst"
+          },
+          {
+            "taxAmount": 15,
+            "taxName": "sgst"
+          }
+        ]
+      }
+    ],
+    "deliveryCharge": 455.1,
+    "preparationTime": 10,
+    "duration": 81.8,
+    "distance": 45.51,
+    "tipAmount": 0,
+    "otpForOrder": "4283"
+  }
+}
